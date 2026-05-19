@@ -6,14 +6,19 @@ workflows:
       flutter: stable
     scripts:
       - name: Generate Android platform
-        script: flutter create . --platforms=android
+        script: |
+          flutter create . --platforms=android
       - name: Get Flutter packages
-        script: flutter pub get
+        script: |
+          flutter pub get
       - name: Analyze project
-        script: flutter analyze
+        script: |
+          flutter analyze
       - name: Run tests
-        script: flutter test
+        script: |
+          flutter test
       - name: Build debug APK
-        script: flutter build apk --debug
+        script: |
+          flutter build apk --debug
     artifacts:
       - build/**/outputs/**/*.apk
